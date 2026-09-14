@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esteban Flores | Desarrollador de Software</title>
+    <!-- Google Fonts: Inter & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- CABECERA HERO -->
+    <header class="hero-header">
+        <div class="avatar-wrapper">
+            <img src="img/Perfil.jpg" alt="Foto de perfil de Esteban Flores" class="avatar-img" width="110" height="110">
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                <span>Disponible para proyectos</span>
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>Esteban Flores</h1>
+            <p class="hero-role">Desarrollador de Software &amp; Estudiante de Ingeniería en Sistemas</p>
+            <p class="hero-bio-short">Apasionado por resolver problemas complejos mediante código limpio, arquitectura escalable y soluciones modernas.</p>
+            <div class="hero-actions">
+                <a href="#proyectos" class="btn-primary">Ver Proyectos</a>
+                <a href="#contacto" class="btn-outline">Contactar</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVEGACIÓN FLOTANTE -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <div class="layout-container">
+        <!-- CONTENIDO PRINCIPAL (MAIN) -->
+        <main>
+            <!-- SECCIÓN SOBRE MÍ -->
+            <section class="content-section" id="sobre-mi">
+                <div class="section-header">
+                    <span class="section-badge">Presentación</span>
+                    <h2>Sobre mí</h2>
+                </div>
+                <div class="sobre-mi-texto">
+                    <p>
+                        Soy <strong>Esteban Flores</strong>, profesional en tecnologías de la información y estudiante de Ingeniería en Sistemas.
+                    </p>
+                    <p>
+                        Combino mi experiencia laboral en <strong>soporte técnico</strong>, <strong>bases de datos SQL</strong> y <strong>servidores Linux</strong> con mi pasión por el desarrollo web y de software moderno.
+                    </p>
+                    <p>
+                        Me destaco por mi pensamiento analítico, mi capacidad para aprender rápido nuevas tecnologías y mi enfoque en resolver problemas complejos construyendo código robusto, modular y eficiente.
+                    </p>
+                </div>
+            </section>
+
+            <!-- SECCIÓN PROYECTOS -->
+            <section class="content-section proyectos-contenedor" id="proyectos">
+                <div class="section-header">
+                    <span class="section-badge">Portafolio</span>
+                    <h2>Proyectos Destacados</h2>
+                </div>
+
+                <div class="grid-proyectos">
+                    <!-- TARJETA PROYECTO 1 -->
+                    <article class="card-proyecto">
+                        <div class="img-contenedor">
+                            <img src="img/Juego_baseball.png" alt="Captura de pantalla del Juego de Baseball">
+                        </div>
+                        <div class="info-proyecto">
+                            <div class="tags-proyecto">
+                                <span class="tag">Figma</span>
+                                <span class="tag">Game Logic</span>
+                                <span class="tag">Diseño UI</span>
+                            </div>
+                            <h3>Juego de Baseball</h3>
+                            <p>
+                                Juego de mesa interactivo basado en dinámicas de dados, donde cada resultado desencadena acciones estratégicas y jugadas de baseball en tiempo real.
+                            </p>
+                            <div class="proyecto-footer">
+                                <a href="https://baseball-field.figma.site/" target="_blank" rel="noopener noreferrer" class="btn-proyecto">
+                                    <span>Ver Proyecto</span>
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- SECCIÓN CONTACTO -->
+            <section class="content-section seccion-contacto" id="contacto">
+                <div class="section-header">
+                    <span class="section-badge">Hablemos</span>
+                    <h2>Contacto</h2>
+                </div>
+                <p class="contacto-descripcion">
+                    ¿Tienes una oportunidad laboral, un proyecto en mente o quieres conversar sobre tecnología? ¡Envíame un mensaje!
+                </p>
+
+                <div class="contacto-contenido">
+                    <!-- Formulario de Contacto -->
+                    <form class="contacto-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.');">
+                        <div class="form-group">
+                            <label for="nombre">Tu nombre</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej. Esteban Flores" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Tu correo electrónico</label>
+                            <input type="email" id="email" name="email" placeholder="nombre@correo.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntame sobre tu proyecto o consulta..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <span>Enviar mensaje</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </button>
+                    </form>
+
+                    <!-- Redes y Enlaces Profesionales -->
+                    <div class="contacto-redes">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/esteban-flores-matamoros/" class="red-item" title="LinkedIn">
+                            <div class="red-icon-wrapper">
+                                <img src="./img/habilidades/Linkedin.jpg" alt="LinkedIn" class="red-icon">
+                            </div>
+                            <div class="red-texto">
+                                <strong>LinkedIn</strong>
+                                <span>Conectar en la red</span>
+                            </div>
+                        </a>
+
+                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/efloresm178" class="red-item" title="GitHub">
+                            <div class="red-icon-wrapper">
+                                <img src="./img/habilidades/github.jpg" alt="GitHub" class="red-icon">
+                            </div>
+                            <div class="red-texto">
+                                <strong>GitHub</strong>
+                                <span>Explorar repositorios</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- BARRA LATERAL (CARRUSEL DE HABILIDADES) -->
+        <aside class="aside-skills">
+            <div class="aside-header">
+                <h3>Tecnologías</h3>
+                <span class="aside-sub">Pasa el cursor para pausar</span>
+            </div>
+
+            <div class="carousel" title="Pasa el cursor para pausar">
+                <!-- GRUPO 1 -->
+                <div class="group">
+                    <!-- Desarrollo Web y Frontend -->
+                    <div class="card"><img src="./img/habilidades/html.jpg" alt="HTML5"><span class="title">HTML5</span></div>
+                    <div class="card"><img src="./img/habilidades/css.jpg" alt="CSS3"><span class="title">CSS3</span></div>
+                    <div class="card"><img src="./img/habilidades/JavaScript.png" alt="JavaScript"><span class="title">JavaScript</span></div>
+                    <div class="card"><img src="./img/habilidades/Angular.jpg" alt="Angular"><span class="title">Angular</span></div>
+                    <!-- Bases de Datos y Backend -->
+                    <div class="card"><img src="./img/habilidades/SQL.png" alt="SQL"><span class="title">SQL</span></div>
+                    <div class="card"><img src="./img/habilidades/PHP.png" alt="PHP"><span class="title">PHP</span></div>
+                    <div class="card"><img src="./img/habilidades/supabase.jpg" alt="Supabase"><span class="title">Supabase</span></div>
+                    <div class="card"><img src="./img/habilidades/Java.png" alt="Java"><span class="title">Java</span></div>
+                    <!-- Sistemas, Servidores y Herramientas -->
+                    <div class="card"><img src="./img/habilidades/linux.jpg" alt="Linux"><span class="title">Linux</span></div>
+                    <div class="card"><img src="./img/habilidades/github.jpg" alt="Git & GitHub"><span class="title">Git &amp; GitHub</span></div>
+                </div>                        
+                <!-- GRUPO 2 (Duplicado para loop infinito fluido sin saltos) -->
+                <div class="group" aria-hidden="true">
+                    <!-- Desarrollo Web y Frontend -->
+                    <div class="card"><img src="./img/habilidades/html.jpg" alt="HTML5"><span class="title">HTML5</span></div>
+                    <div class="card"><img src="./img/habilidades/css.jpg" alt="CSS3"><span class="title">CSS3</span></div>
+                    <div class="card"><img src="./img/habilidades/JavaScript.png" alt="JavaScript"><span class="title">JavaScript</span></div>
+                    <div class="card"><img src="./img/habilidades/Angular.jpg" alt="Angular"><span class="title">Angular</span></div>
+                    <!-- Bases de Datos y Backend -->
+                    <div class="card"><img src="./img/habilidades/SQL.png" alt="SQL"><span class="title">SQL</span></div>
+                    <div class="card"><img src="./img/habilidades/PHP.png" alt="PHP"><span class="title">PHP</span></div>
+                    <div class="card"><img src="./img/habilidades/supabase.jpg" alt="Supabase"><span class="title">Supabase</span></div>
+                    <div class="card"><img src="./img/habilidades/Java.png" alt="Java"><span class="title">Java</span></div>
+                    <!-- Sistemas, Servidores y Herramientas -->
+                    <div class="card"><img src="./img/habilidades/linux.jpg" alt="Linux"><span class="title">Linux</span></div>
+                    <div class="card"><img src="./img/habilidades/github.jpg" alt="Git & GitHub"><span class="title">Git &amp; GitHub</span></div>
+                </div>                        
+            </div>
+        </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <p>© 2026 Esteban Flores · Desarrollador de Software · Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
