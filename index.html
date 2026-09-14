@@ -108,22 +108,19 @@
 
                 <div class="contacto-contenido">
                     <!-- Formulario de Contacto -->
-                    <form class="contacto-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.');">
+                    <form class="contacto-form" action="https://formspree.io/f/xoeqgykk" method="POST">
                         <div class="form-group">
                             <label for="nombre">Tu nombre</label>
                             <input type="text" id="nombre" name="nombre" placeholder="Ej. Esteban Flores" required>
                         </div>
-
                         <div class="form-group">
                             <label for="email">Tu correo electrónico</label>
                             <input type="email" id="email" name="email" placeholder="nombre@correo.com" required>
                         </div>
-
                         <div class="form-group">
                             <label for="mensaje">Mensaje</label>
                             <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntame sobre tu proyecto o consulta..." required></textarea>
                         </div>
-
                         <button type="submit" class="btn-submit">
                             <span>Enviar mensaje</span>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
