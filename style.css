@@ -734,17 +734,110 @@ main {
 }
 
 @media (max-width: 768px) {
+    /* Reordenamiento para que Tecnologías aparezca antes que Contacto */
     .layout-container {
+        display: flex;
         flex-direction: column;
+        gap: 24px;
+    }
+
+    main {
+        display: contents;
+    }
+
+    #sobre-mi {
+        order: 1;
+    }
+
+    #proyectos {
+        order: 2;
     }
 
     .aside-skills {
+        order: 3;
         width: 100%;
         position: static;
+        padding: 24px 18px;
+        scroll-margin-top: 90px;
     }
 
+    #contacto {
+        order: 4;
+    }
+
+    /* Cabecera de habilidades en móvil */
+    .aside-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        margin-bottom: 14px;
+        padding: 0 4px;
+    }
+
+    .aside-header h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0;
+    }
+
+    .aside-sub {
+        font-size: 0.75rem;
+    }
+
+    /* Carrusel Horizontal en Móvil */
     .carousel {
-        height: 240px;
+        height: auto;
+        flex-direction: row;
+        gap: 12px;
+        overflow: hidden;
+        padding: 6px 0;
+        /* Máscara con degradado horizontal suave para bordes elegantes */
+        mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+    }
+
+    .carousel .group {
+        flex-direction: row;
+        gap: 12px;
+        flex-shrink: 0;
+        animation: spinHorizontal 24s linear infinite;
+        will-change: transform;
+    }
+
+    .carousel:hover .group,
+    .carousel:active .group {
+        animation-play-state: paused;
+    }
+
+    @keyframes spinHorizontal {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-100% - 12px));
+        }
+    }
+
+    /* Tarjetas compactas en fila horizontal */
+    .card {
+        width: 96px;
+        height: 92px;
+        flex-shrink: 0;
+        padding: 8px 6px 24px 6px;
+    }
+
+    .card:hover {
+        transform: translateY(-3px);
+    }
+
+    .card img {
+        max-width: 44px;
+        max-height: 32px;
+    }
+
+    .card .title {
+        font-size: 0.68rem;
+        padding: 2px 0;
     }
 }
 
@@ -762,7 +855,34 @@ main {
         font-size: 1.7rem;
     }
 
-    .content-section {
-        padding: 20px 16px;
+    .nav-links a {
+        font-size: 0.78rem;
+        padding: 5px 8px;
+    }
+
+    .content-section,
+    .aside-skills {
+        padding: 20px 14px;
+    }
+
+    .aside-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+
+    .card {
+        width: 86px;
+        height: 84px;
+        padding: 6px 4px 22px 4px;
+    }
+
+    .card img {
+        max-width: 38px;
+        max-height: 28px;
+    }
+
+    .card .title {
+        font-size: 0.62rem;
     }
 }
