@@ -43,24 +43,52 @@
     <div class="layout-container">
         <!-- CONTENIDO PRINCIPAL (MAIN) -->
         <main>
-            <!-- SECCIÓN SOBRE MÍ -->
-            <section class="content-section" id="sobre-mi">
-                <div class="section-header">
+            <!-- Contenedor de dos columnas -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; margin-bottom: 20px;">
+            
+            <!-- TARJETA 1: Sobre mí -->
+            <section class="content-section" id="sobre-mi" style="margin-bottom: 0; height: 100%; display: flex; flex-direction: column; justify-content: flex-start;">
+                <div class="section-header" style="margin-bottom: 16px;">
                     <span class="section-badge">Presentación</span>
                     <h2>Sobre mí</h2>
                 </div>
-                <div class="sobre-mi-texto">
-                    <p>
-                        Soy <strong>Esteban Flores</strong>, profesional en tecnologías de la información y estudiante de Ingeniería en Sistemas.
-                    </p>
-                    <p>
-                        Combino mi experiencia laboral en <strong>soporte técnico</strong>, <strong>bases de datos SQL</strong> y <strong>servidores Linux</strong> con mi pasión por el desarrollo web y de software moderno.
-                    </p>
-                    <p>
-                        Me destaco por mi pensamiento analítico, mi capacidad para aprender rápido nuevas tecnologías y mi enfoque en resolver problemas complejos construyendo código robusto, modular y eficiente.
-                    </p>
+                <div class="sobre-mi-texto" style="display: flex; flex-direction: column; gap: 12px;">
+                    <p style="margin: 0;">Soy <strong>Esteban Flores</strong>, profesional en tecnologías de la información y estudiante de Ingeniería en Sistemas.</p>
+                    <p style="margin: 0;">Combino mi experiencia laboral en <strong>soporte técnico</strong>, <strong>bases de datos SQL</strong> y servidores Linux con mi pasión por el desarrollo web y de software moderno.</p>
+                    <p style="margin: 0;">Me destaco por mi pensamiento analítico, mi capacidad para aprender rápido nuevas tecnologías y mi enfoque en resolver problemas complejos construyendo código robusto, modular y eficiente.</p>
                 </div>
             </section>
+
+            <!-- TARJETA 2: Experiencia (Ordenada cronológicamente: Instacredit -> RackNation) -->
+            <section class="content-section" id="experiencia" style="margin-bottom: 0; height: 100%; display: flex; flex-direction: column; justify-content: flex-start;">
+                <div class="section-header" style="margin-bottom: 16px;">
+                    <span class="section-badge">Trayectoria</span>
+                    <h2>Experiencia</h2>
+                </div>
+                <div class="experiencia-texto" style="display: flex; flex-direction: column; gap: 20px;">
+                
+                    <!-- Primer trabajo cronológicamente -->
+                    <div class="experiencia-item">
+                        <h3 style="margin-bottom: 2px;">Analista de Datos / Soporte</h3>
+                        <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 6px;">Instacredit</p>
+                        <p style="font-size: 0.9rem; margin: 0;">
+                        Análisis de datos, gestión de consultas y soporte técnico especializado asegurando la estabilidad interna.
+                        </p>
+                    </div>
+
+                    <!-- Trabajo actual / más reciente -->
+                    <div class="experiencia-item" style="margin-bottom: 4px;">
+                        <h3 style="margin-bottom: 2px;">Agente de NOC</h3>
+                        <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 6px;">RackNation</p>
+                        <p style="font-size: 0.9rem; margin: 0;">
+                        Monitoreo de infraestructura de red, servidores y sistemas críticos. Detección temprana de incidentes y soporte avanzado.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            </div>
 
             <!-- SECCIÓN PROYECTOS -->
             <section class="content-section proyectos-contenedor" id="proyectos">
