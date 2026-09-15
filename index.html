@@ -257,5 +257,20 @@
     <footer class="main-footer">
         <p>© 2026 Esteban Flores · Desarrollador de Software · Todos los derechos reservados</p>
     </footer>
+
+    <script>
+        // Al recargar la página, fuerza el scroll arriba y limpia el hash de la URL
+        window.addEventListener('beforeunload', function () {
+            window.scrollTo(0, 0);
+        });
+
+        // Si la página se carga con un hash en la URL, lo quita y sube al inicio
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
+        window.onload = function () {
+            window.scrollTo(0, 0);
+        };
+    </script>
 </body>
 </html>
