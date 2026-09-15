@@ -5,15 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Básico -->
-    <title>Esteban Flores | Desarrollador de Software</title>
-    <meta name="description" content="Portafolio profesional de Esteban Flores, estudiante de Ingeniería en Sistemas y profesional de TI con experiencia en soporte técnico, bases de datos SQL y redes NOC.">
+    <title>Esteban Flores | Desarrollador de Software · Infraestructura TI · Linux · SQL</title>
+    <meta name="description" content="Portafolio de Esteban Flores, estudiante de Ingeniería en Sistemas con experiencia práctica en soporte técnico, infraestructura, servidores Linux, bases de datos SQL y desarrollo de aplicaciones web.">
     <meta name="author" content="Esteban Flores">
-    <meta name="keywords" content="Esteban Flores, Desarrollador Web, Ingeniero en Sistemas, Soporte Técnico, NOC, SQL, Costa Rica">
-    
+    <meta name="keywords" content="Esteban Flores, Desarrollador de Software, Software Developer, Ingeniería en Sistemas, Soporte Técnico, Infraestructura TI, Linux, SQL, NOC, Costa Rica">
+    <link rel="canonical" href="https://mi-portafolio-tnme.onrender.com/">
+
     <!-- Open Graph / Redes Sociales (LinkedIn, WhatsApp, etc.) -->
-    <meta property="og:title" content="Esteban Flores | Desarrollador de Software">
-    <meta property="og:description" content="Conoce mis proyectos de desarrollo, experiencia en soporte técnico y administración de infraestructura TI.">
+    <meta property="og:title" content="Esteban Flores | Desarrollador de Software · Infraestructura TI · Linux · SQL">
+    <meta property="og:description" content="Proyectos de desarrollo, experiencia en soporte técnico, infraestructura, servidores Linux y bases de datos SQL.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mi-portafolio-tnme.onrender.com/">
+    <meta property="og:locale" content="es_CR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta name="twitter:card" content="summary">
+
+    <!-- Tema e idioma guardados: se aplican antes de pintar para evitar parpadeos -->
+    <script>
+        (function () {
+            try {
+                if (localStorage.getItem('theme') === 'light') document.documentElement.dataset.theme = 'light';
+                if (localStorage.getItem('lang') === 'en') document.documentElement.lang = 'en';
+            } catch (e) {}
+        })();
+    </script>
 
     <!-- Google tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N822213TYY"></script>
@@ -29,32 +44,46 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <a href="#contenido" class="skip-link" data-i18n="a11y.skip">Saltar al contenido</a>
+
     <!-- NAVEGACIÓN FLOTANTE -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Navegación principal" data-i18n-attr="aria-label:a11y.nav">
         <ul class="nav-links">
-            <li><a href="#sobre-mi">Sobre mí</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#sobre-mi" data-i18n="nav.about">Sobre mí</a></li>
+            <li><a href="#proyectos" data-i18n="nav.projects">Proyectos</a></li>
+            <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
         </ul>
+        <div class="nav-controls">
+            <button type="button" id="lang-toggle" class="control-btn lang-btn" aria-label="Cambiar idioma a inglés" title="Cambiar idioma a inglés" data-i18n-attr="aria-label:a11y.lang; title:a11y.lang">
+                <span class="lang-opt is-active" data-lang="es">ES</span>
+                <span class="lang-sep" aria-hidden="true">/</span>
+                <span class="lang-opt" data-lang="en">EN</span>
+            </button>
+            <button type="button" id="theme-toggle" class="control-btn theme-btn" aria-label="Activar modo claro" title="Activar modo claro">
+                <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
+        </div>
     </nav>
     <!-- CABECERA HERO -->
     <header class="hero-header">
         <div class="avatar-wrapper">
-            <img src="img/Perfil.jpg" alt="Foto de perfil de Esteban Flores" class="avatar-img" width="110" height="110">
+            <img src="img/Perfil.jpg" alt="Foto de perfil de Esteban Flores" class="avatar-img" width="110" height="110" data-i18n-attr="alt:hero.avatarAlt">
             <div class="status-badge">
-                <span class="status-dot"></span>
-                <span>Disponible para proyectos</span>
+                <span class="status-dot" aria-hidden="true"></span>
+                <span data-i18n="hero.status">Disponible para proyectos</span>
             </div>
         </div>
         <div class="hero-content">
             <h1>Esteban Flores</h1>
-            <p class="hero-role">Desarrollador de Software &amp; Estudiante de Ingeniería en Sistemas</p>
-            <p class="hero-bio-short">Apasionado por resolver problemas complejos mediante código limpio, arquitectura escalable y soluciones modernas.</p>
+            <p class="hero-role" data-i18n-html="hero.role">Desarrollador de Software<span class="role-sep" aria-hidden="true">|</span>Infraestructura&nbsp;TI<span class="role-sep" aria-hidden="true">|</span>Linux<span class="role-sep" aria-hidden="true">|</span>SQL</p>
+            <p class="hero-bio-short" data-i18n="hero.bio">Estudiante de Ingeniería en Sistemas con experiencia práctica en soporte técnico, infraestructura, servidores Linux, bases de datos SQL y desarrollo de aplicaciones web.</p>
             <div class="hero-actions">
-                <a href="#proyectos" class="btn-primary">Ver Proyectos</a>
-                <a href="#contacto" class="btn-outline">Contactar</a>
+                <a href="#proyectos" class="btn-primary" data-i18n="hero.ctaProjects">Ver Proyectos</a>
+                <a href="#contacto" class="btn-outline" data-i18n="hero.ctaContact">Contactar</a>
             </div>
         </div>
     </header>
@@ -62,47 +91,50 @@
 
     <div class="layout-container">
         <!-- CONTENIDO PRINCIPAL (MAIN) -->
-        <main>
+        <main id="contenido" tabindex="-1">
             <!-- Contenedor de dos columnas -->
             <div class="two-col-grid">
-            
+
             <!-- TARJETA 1: Sobre mí -->
-            <section class="content-section" id="sobre-mi" style="margin-bottom: 0; height: 100%; display: flex; flex-direction: column; justify-content: flex-start;">
-                <div class="section-header" style="margin-bottom: 16px;">
-                    <span class="section-badge">Presentación</span>
-                    <h2>Sobre mí</h2>
+            <section class="content-section content-section--row" id="sobre-mi">
+                <div class="section-header">
+                    <span class="section-badge" data-i18n="about.badge">Presentación</span>
+                    <h2 data-i18n="about.title">Sobre mí</h2>
                 </div>
-                <div class="sobre-mi-texto" style="display: flex; flex-direction: column; gap: 12px;">
-                    <p style="margin: 0;">Soy <strong>Esteban Flores</strong>, profesional en tecnologías de la información y estudiante de Ingeniería en Sistemas.</p>
-                    <p style="margin: 0;">Combino mi experiencia laboral en <strong>soporte técnico</strong>, <strong>bases de datos SQL</strong> y servidores Linux con mi pasión por el desarrollo web y de software moderno.</p>
-                    <p style="margin: 0;">Me destaco por mi pensamiento analítico, mi capacidad para aprender rápido nuevas tecnologías y mi enfoque en resolver problemas complejos construyendo código robusto, modular y eficiente.</p>
+                <div class="sobre-mi-texto">
+                    <p data-i18n-html="about.p1">Soy <strong>Esteban Flores</strong>, estudiante de <strong>Ingeniería en Sistemas</strong> y profesional de TI enfocado en el <strong>desarrollo de software</strong> y la infraestructura tecnológica.</p>
+                    <p data-i18n-html="about.p2">Mi experiencia en <strong>soporte técnico</strong>, <strong>bases de datos SQL</strong> y <strong>servidores Linux</strong> me ha dado una base sólida en <strong>infraestructura</strong> y en el diagnóstico y resolución de problemas (<em>troubleshooting</em>).</p>
+                    <p data-i18n-html="about.p3">Complemento esa base con el desarrollo de aplicaciones web, buscando soluciones claras y mantenibles, y con un <strong>aprendizaje continuo</strong> de nuevas tecnologías.</p>
                 </div>
             </section>
 
             <!-- TARJETA 2: Experiencia (Ordenada cronológicamente: Instacredit -> RackNation) -->
-            <section class="content-section" id="experiencia" style="margin-bottom: 0; height: 100%; display: flex; flex-direction: column; justify-content: flex-start;">
-                <div class="section-header" style="margin-bottom: 16px;">
-                    <span class="section-badge">Trayectoria</span>
-                    <h2>Experiencia</h2>
+            <section class="content-section content-section--row" id="experiencia">
+                <div class="section-header">
+                    <span class="section-badge" data-i18n="exp.badge">Trayectoria</span>
+                    <h2 data-i18n="exp.title">Experiencia</h2>
                 </div>
-                <div class="experiencia-texto" style="display: flex; flex-direction: column; gap: 20px;">
-                
+                <div class="experiencia-texto">
+
                     <!-- Primer trabajo cronológicamente -->
                     <div class="experiencia-item">
-                        <h3 style="margin-bottom: 2px;">Analista de Datos / Soporte</h3>
-                        <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 6px;">Instacredit</p>
-                        <p style="font-size: 0.9rem; margin: 0;">
-                        Análisis de datos, gestión de consultas y soporte técnico especializado asegurando la estabilidad interna.
-                        </p>
+                        <h3 data-i18n="exp.job1.role">Analista de Datos / Soporte</h3>
+                        <p class="experiencia-empresa">Instacredit</p>
+                        <ul class="experiencia-lista">
+                            <li data-i18n="exp.job1.b1">Análisis de datos y gestión de consultas.</li>
+                            <li data-i18n="exp.job1.b2">Soporte técnico especializado para asegurar la estabilidad de los sistemas internos.</li>
+                        </ul>
                     </div>
 
                     <!-- Trabajo actual / más reciente -->
-                    <div class="experiencia-item" style="margin-bottom: 4px;">
-                        <h3 style="margin-bottom: 2px;">Agente de NOC</h3>
-                        <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 6px;">RackNation</p>
-                        <p style="font-size: 0.9rem; margin: 0;">
-                        Monitoreo de infraestructura de red, servidores y sistemas críticos. Detección temprana de incidentes y soporte avanzado.
-                        </p>
+                    <div class="experiencia-item">
+                        <h3 data-i18n="exp.job2.role">Agente de NOC</h3>
+                        <p class="experiencia-empresa">RackNation</p>
+                        <ul class="experiencia-lista">
+                            <li data-i18n="exp.job2.b1">Monitoreo de infraestructura de red, servidores Linux y sistemas críticos.</li>
+                            <li data-i18n="exp.job2.b2">Troubleshooting y análisis de logs para la detección temprana y resolución de incidentes.</li>
+                            <li data-i18n="exp.job2.b3">Soporte avanzado en servicios web, DNS y correo electrónico.</li>
+                        </ul>
                     </div>
 
                 </div>
@@ -113,30 +145,28 @@
             <!-- SECCIÓN PROYECTOS -->
             <section class="content-section proyectos-contenedor" id="proyectos">
                 <div class="section-header">
-                    <span class="section-badge">Portafolio</span>
-                    <h2>Proyectos Destacados</h2>
+                    <span class="section-badge" data-i18n="projects.badge">Portafolio</span>
+                    <h2 data-i18n="projects.title">Proyectos Destacados</h2>
                 </div>
 
                 <div class="grid-proyectos">
                     <!-- TARJETA PROYECTO 1 -->
                     <article class="card-proyecto">
                         <div class="img-contenedor">
-                            <img src="img/Juego_baseball.png" alt="Captura de pantalla del Juego de Baseball">
+                            <img src="img/Juego_baseball.png" alt="Captura de pantalla del Juego de Baseball" loading="lazy" data-i18n-attr="alt:projects.p1.alt">
                         </div>
                         <div class="info-proyecto">
                             <div class="tags-proyecto">
                                 <span class="tag">Figma</span>
                                 <span class="tag">Game Logic</span>
-                                <span class="tag">Diseño UI</span>
+                                <span class="tag" data-i18n="projects.p1.tag">Diseño UI</span>
                             </div>
-                            <h3>Juego de Baseball</h3>
-                            <p>
-                                Juego de mesa interactivo basado en dinámicas de dados, donde cada resultado desencadena acciones estratégicas y jugadas de baseball en tiempo real.
-                            </p>
+                            <h3 data-i18n="projects.p1.title">Juego de Baseball</h3>
+                            <p data-i18n="projects.p1.desc">Juego de mesa interactivo basado en dinámicas de dados, donde cada resultado desencadena acciones estratégicas y jugadas de baseball en tiempo real.</p>
                             <div class="proyecto-footer">
                                 <a href="https://baseball-field.figma.site/" target="_blank" rel="noopener noreferrer" class="btn-proyecto" onclick="gtag('event', 'clic_proyecto', { 'project_name': 'Juego de Béisbol' });">
-                                    <span>Ver Proyecto</span>
-                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    <span data-i18n="projects.demo">Ver demo</span>
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                                 </a>
                             </div>
                         </div>
@@ -147,7 +177,7 @@
                         <div class="img-contenedor img-contenedor--placeholder">
                             <div class="proyecto-placeholder">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-                                <span>Tienda Online</span>
+                                <span aria-hidden="true">TechShop</span>
                             </div>
                         </div>
                         <div class="info-proyecto">
@@ -157,15 +187,14 @@
                                 <span class="tag">JavaScript</span>
                                 <span class="tag">Render</span>
                             </div>
-                            <h3>Tienda Online</h3>
-                            <p>
-                                Tienda web desarrollada en clases con catálogo de productos, navegación por categorías y diseño responsivo. Desplegada en Render con acceso público en línea.
-                            </p>
+                            <h3 data-i18n="projects.p2.title">Tienda Online</h3>
+                            <p data-i18n="projects.p2.desc">Sitio web de tienda (TechShop) desarrollado en clases, con página de inicio y producto destacado, secciones de multimedia e iFrames y navegación entre páginas. Desplegado en Render con acceso público.</p>
                             <div class="proyecto-footer">
                                 <a href="https://tienda-m-xuo2.onrender.com" target="_blank" rel="noopener noreferrer" class="btn-proyecto" onclick="gtag('event', 'clic_proyecto', { 'project_name': 'Tienda Online' });">
-                                    <span>Ver Proyecto</span>
-                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    <span data-i18n="projects.demo">Ver demo</span>
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                                 </a>
+                                <p class="proyecto-nota" data-i18n="projects.p2.note">Alojado en el plan gratuito de Render: la primera carga puede tardar unos segundos.</p>
                             </div>
                         </div>
                     </article>
@@ -175,53 +204,56 @@
             <!-- SECCIÓN CONTACTO -->
             <section class="content-section seccion-contacto" id="contacto">
                 <div class="section-header">
-                    <span class="section-badge">Hablemos</span>
-                    <h2>Contacto</h2>
+                    <span class="section-badge" data-i18n="contact.badge">Hablemos</span>
+                    <h2 data-i18n="contact.title">Contacto</h2>
                 </div>
-                <p class="contacto-descripcion">
-                    ¿Tienes una oportunidad laboral, un proyecto en mente o quieres conversar sobre tecnología? ¡Envíame un mensaje!
-                </p>
+                <p class="contacto-descripcion" data-i18n="contact.desc">¿Tienes una oportunidad laboral, un proyecto en mente o quieres conversar sobre tecnología? ¡Envíame un mensaje!</p>
 
                 <div class="contacto-contenido">
-                    <!-- Formulario de Contacto -->
+                    <!-- Formulario de Contacto (Formspree; con JS se envía sin salir de la página) -->
                     <form class="contacto-form" action="https://formspree.io/f/xoeqgykk" method="POST">
                         <div class="form-group">
-                            <label for="nombre">Tu nombre</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Ej. Esteban Flores" required>
+                            <label for="nombre" data-i18n="contact.name">Tu nombre</label>
+                            <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Ej. María Pérez" data-i18n-attr="placeholder:contact.namePh" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Tu correo electrónico</label>
-                            <input type="email" id="email" name="email" placeholder="nombre@correo.com" required>
+                            <label for="email" data-i18n="contact.email">Tu correo electrónico</label>
+                            <input type="email" id="email" name="email" autocomplete="email" placeholder="nombre@correo.com" data-i18n-attr="placeholder:contact.emailPh" required>
                         </div>
                         <div class="form-group">
-                            <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntame sobre tu proyecto o consulta..." required></textarea>
+                            <label for="asunto" data-i18n="contact.subject">Asunto</label>
+                            <input type="text" id="asunto" name="asunto" placeholder="Ej. Oportunidad laboral" data-i18n-attr="placeholder:contact.subjectPh">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje" data-i18n="contact.message">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntame sobre tu proyecto o consulta..." data-i18n-attr="placeholder:contact.messagePh" required></textarea>
                         </div>
                         <button type="submit" class="btn-submit">
                             <span>Enviar mensaje</span>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                         </button>
+                        <p id="form-status" class="form-status" role="status" aria-live="polite" hidden></p>
                     </form>
 
                     <!-- Redes y Enlaces Profesionales -->
                     <div class="contacto-redes">
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/esteban-flores-matamoros/" class="red-item" title="LinkedIn" onclick="gtag('event', 'clic_red_social', { 'social_network': 'LinkedIn' });">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/esteban-flores-matamoros/" class="red-item" onclick="gtag('event', 'clic_red_social', { 'social_network': 'LinkedIn' });">
                             <div class="red-icon-wrapper">
-                                <img src="./img/habilidades/Linkedin.jpg" alt="LinkedIn" class="red-icon">
+                                <img src="./img/habilidades/Linkedin.jpg" alt="" class="red-icon">
                             </div>
                             <div class="red-texto">
                                 <strong>LinkedIn</strong>
-                                <span>Conectar en la red</span>
+                                <span data-i18n="contact.linkedin">Conectar en la red</span>
                             </div>
                         </a>
 
-                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/efloresm178" class="red-item" title="GitHub" onclick="gtag('event', 'clic_red_social', { 'social_network': 'GitHub' });">
+                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/efloresm178" class="red-item" onclick="gtag('event', 'clic_red_social', { 'social_network': 'GitHub' });">
                             <div class="red-icon-wrapper">
-                                <img src="./img/habilidades/github.jpg" alt="GitHub" class="red-icon">
+                                <img src="./img/habilidades/github.jpg" alt="" class="red-icon">
                             </div>
                             <div class="red-texto">
                                 <strong>GitHub</strong>
-                                <span>Explorar repositorios</span>
+                                <span data-i18n="contact.github">Explorar repositorios</span>
                             </div>
                         </a>
                     </div>
@@ -230,67 +262,52 @@
         </main>
 
         <!-- BARRA LATERAL (CARRUSEL DE HABILIDADES) -->
-        <aside class="aside-skills" id="tecnologias">
+        <aside class="aside-skills" id="tecnologias" aria-labelledby="tecnologias-titulo">
             <div class="aside-header">
-                <h3>Tecnologías</h3>
-                <span class="aside-sub">Pasa el cursor para pausar</span>
+                <h2 id="tecnologias-titulo" data-i18n="skills.title">Tecnologías</h2>
+                <span class="aside-sub" data-i18n="skills.hint">Pasa el cursor para pausar</span>
             </div>
 
-            <div class="carousel" title="Pasa el cursor para pausar">
-                <!-- GRUPO 1 -->
+            <div class="carousel">
+                <!-- GRUPO 1 (el nombre de cada tecnología lo aporta .title, por eso alt vacío) -->
                 <div class="group">
                     <!-- Desarrollo Web y Frontend -->
-                    <div class="card"><img src="./img/habilidades/html.jpg" alt="HTML5"><span class="title">HTML5</span></div>
-                    <div class="card"><img src="./img/habilidades/css.jpg" alt="CSS3"><span class="title">CSS3</span></div>
-                    <div class="card"><img src="./img/habilidades/JavaScript.png" alt="JavaScript"><span class="title">JavaScript</span></div>
-                    <div class="card"><img src="./img/habilidades/Angular.jpg" alt="Angular"><span class="title">Angular</span></div>
+                    <div class="card"><img src="./img/habilidades/html.jpg" alt=""><span class="title">HTML5</span></div>
+                    <div class="card"><img src="./img/habilidades/css.jpg" alt=""><span class="title">CSS3</span></div>
+                    <div class="card"><img src="./img/habilidades/JavaScript.png" alt=""><span class="title">JavaScript</span></div>
+                    <div class="card"><img src="./img/habilidades/Angular.jpg" alt=""><span class="title">Angular</span></div>
                     <!-- Bases de Datos y Backend -->
-                    <div class="card"><img src="./img/habilidades/SQL.png" alt="SQL"><span class="title">SQL</span></div>
-                    <div class="card"><img src="./img/habilidades/PHP.png" alt="PHP"><span class="title">PHP</span></div>
-                    <div class="card"><img src="./img/habilidades/supabase.jpg" alt="Supabase"><span class="title">Supabase</span></div>
-                    <div class="card"><img src="./img/habilidades/Java.png" alt="Java"><span class="title">Java</span></div>
+                    <div class="card"><img src="./img/habilidades/SQL.png" alt=""><span class="title">SQL</span></div>
+                    <div class="card"><img src="./img/habilidades/PHP.png" alt=""><span class="title">PHP</span></div>
+                    <div class="card"><img src="./img/habilidades/supabase.jpg" alt=""><span class="title">Supabase</span></div>
+                    <div class="card"><img src="./img/habilidades/Java.png" alt=""><span class="title">Java</span></div>
                     <!-- Sistemas, Servidores y Herramientas -->
-                    <div class="card"><img src="./img/habilidades/linux.jpg" alt="Linux"><span class="title">Linux</span></div>
-                    <div class="card"><img src="./img/habilidades/github.jpg" alt="Git & GitHub"><span class="title">Git &amp; GitHub</span></div>
-                </div>                        
+                    <div class="card"><img src="./img/habilidades/linux.jpg" alt=""><span class="title">Linux</span></div>
+                    <div class="card"><img src="./img/habilidades/github.jpg" alt=""><span class="title">Git &amp; GitHub</span></div>
+                </div>
                 <!-- GRUPO 2 (Duplicado para loop infinito fluido sin saltos) -->
                 <div class="group" aria-hidden="true">
                     <!-- Desarrollo Web y Frontend -->
-                    <div class="card"><img src="./img/habilidades/html.jpg" alt="HTML5"><span class="title">HTML5</span></div>
-                    <div class="card"><img src="./img/habilidades/css.jpg" alt="CSS3"><span class="title">CSS3</span></div>
-                    <div class="card"><img src="./img/habilidades/JavaScript.png" alt="JavaScript"><span class="title">JavaScript</span></div>
-                    <div class="card"><img src="./img/habilidades/Angular.jpg" alt="Angular"><span class="title">Angular</span></div>
+                    <div class="card"><img src="./img/habilidades/html.jpg" alt=""><span class="title">HTML5</span></div>
+                    <div class="card"><img src="./img/habilidades/css.jpg" alt=""><span class="title">CSS3</span></div>
+                    <div class="card"><img src="./img/habilidades/JavaScript.png" alt=""><span class="title">JavaScript</span></div>
+                    <div class="card"><img src="./img/habilidades/Angular.jpg" alt=""><span class="title">Angular</span></div>
                     <!-- Bases de Datos y Backend -->
-                    <div class="card"><img src="./img/habilidades/SQL.png" alt="SQL"><span class="title">SQL</span></div>
-                    <div class="card"><img src="./img/habilidades/PHP.png" alt="PHP"><span class="title">PHP</span></div>
-                    <div class="card"><img src="./img/habilidades/supabase.jpg" alt="Supabase"><span class="title">Supabase</span></div>
-                    <div class="card"><img src="./img/habilidades/Java.png" alt="Java"><span class="title">Java</span></div>
+                    <div class="card"><img src="./img/habilidades/SQL.png" alt=""><span class="title">SQL</span></div>
+                    <div class="card"><img src="./img/habilidades/PHP.png" alt=""><span class="title">PHP</span></div>
+                    <div class="card"><img src="./img/habilidades/supabase.jpg" alt=""><span class="title">Supabase</span></div>
+                    <div class="card"><img src="./img/habilidades/Java.png" alt=""><span class="title">Java</span></div>
                     <!-- Sistemas, Servidores y Herramientas -->
-                    <div class="card"><img src="./img/habilidades/linux.jpg" alt="Linux"><span class="title">Linux</span></div>
-                    <div class="card"><img src="./img/habilidades/github.jpg" alt="Git & GitHub"><span class="title">Git &amp; GitHub</span></div>
-                </div>                        
+                    <div class="card"><img src="./img/habilidades/linux.jpg" alt=""><span class="title">Linux</span></div>
+                    <div class="card"><img src="./img/habilidades/github.jpg" alt=""><span class="title">Git &amp; GitHub</span></div>
+                </div>
             </div>
         </aside>
     </div>
 
     <!-- FOOTER -->
     <footer class="main-footer">
-        <p>© 2026 Esteban Flores · Desarrollador de Software · Todos los derechos reservados</p>
+        <p>© <span data-year>2026</span> Esteban Flores · <span data-i18n="footer.role">Desarrollador de Software</span> · <span data-i18n="footer.rights">Todos los derechos reservados</span></p>
     </footer>
-
-    <script>
-        // Al recargar la página, fuerza el scroll arriba y limpia el hash de la URL
-        window.addEventListener('beforeunload', function () {
-            window.scrollTo(0, 0);
-        });
-
-        // Si la página se carga con un hash en la URL, lo quita y sube al inicio
-        if (history.scrollRestoration) {
-            history.scrollRestoration = 'manual';
-        }
-        window.onload = function () {
-            window.scrollTo(0, 0);
-        };
-    </script>
 </body>
 </html>
