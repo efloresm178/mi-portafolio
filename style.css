@@ -751,6 +751,15 @@ main {
     border-top: 1px solid var(--border-subtle);
 }
 
+/* --- DOS COLUMNAS: Sobre mí / Experiencia --- */
+.two-col-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: stretch;
+    margin-bottom: 20px;
+}
+
 /* --- MEDIA QUERIES (RESPONSIVE) --- */
 @media (max-width: 960px) {
     .contacto-contenido {
