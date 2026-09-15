@@ -925,3 +925,55 @@ main {
         font-size: 0.62rem;
     }
 }
+
+/* 1. Definición de Variables por Defecto (Modo Oscuro Tech) */
+:root {
+  --bg-color: #0b0f19;
+  --text-color: #f3f4f6;
+  --text-muted: #9ca3af;
+  --accent-color: #38bdf8;
+  --card-bg: #111827;
+  --border-color: rgba(56, 189, 248, 0.2);
+}
+
+/* 2. Definición de Variables para el Modo Claro */
+body.light-mode {
+  --bg-color: #f8fafc;
+  --text-color: #0f172a;
+  --text-muted: #475569;
+  --accent-color: #0284c7;
+  --card-bg: #ffffff;
+  --border-color: rgba(2, 132, 199, 0.2);
+}
+
+/* Aplicación de las variables en tus estilos base */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilo para los botones flotantes de control */
+.site-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.site-controls button {
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.site-controls button:hover {
+  transform: scale(1.1);
+}
