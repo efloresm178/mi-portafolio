@@ -49,7 +49,7 @@ const translations = {
         'projects.p1.tag': 'Diseño UI',
         'projects.p1.desc': 'Juego de mesa interactivo basado en dinámicas de dados, donde cada resultado desencadena acciones estratégicas y jugadas de baseball en tiempo real.',
         'projects.p2.title': 'Tienda Online',
-        'projects.p2.desc': 'Sitio web de tienda (TechShop) desarrollado en clases, con página de inicio y producto destacado, secciones de multimedia e iFrames y navegación entre páginas. Desplegado en Render con acceso público.',
+        'projects.p2.desc': 'Proyecto en constante evolución desarrollado durante el curso. Actualmente incluye página de inicio, productos destacados, multimedia e iFrames. ¡En actualización continua!',
         'projects.p2.note': 'Alojado en el plan gratuito de Render: la primera carga puede tardar unos segundos.',
 
         'skills.title': 'Tecnologías',
@@ -121,7 +121,7 @@ const translations = {
         'projects.p1.tag': 'UI Design',
         'projects.p1.desc': 'Interactive board game built around dice mechanics, where each roll triggers strategic actions and baseball plays in real time.',
         'projects.p2.title': 'Online Store',
-        'projects.p2.desc': 'Store website (TechShop) built in class, with a home page and featured product, multimedia and iFrames sections, and navigation between pages. Deployed on Render with public access.',
+        'projects.p2.desc': 'Project under continuous evolution developed throughout the course. Currently features a home page, featured products, multimedia, and iFrames. Continuously updated!',
         'projects.p2.note': 'Hosted on Render\'s free plan: the first load may take a few seconds.',
 
         'skills.title': 'Technologies',
