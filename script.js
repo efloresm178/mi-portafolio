@@ -14,6 +14,7 @@ const translations = {
         'a11y.themeToLight': 'Activar modo claro',
         'a11y.themeToDark': 'Activar modo oscuro',
 
+        'nav.brandAria': 'Inicio - Esteban Flores',
         'nav.about': 'Sobre mí',
         'nav.projects': 'Proyectos',
         'nav.contact': 'Contacto',
@@ -93,6 +94,7 @@ const translations = {
         'a11y.themeToLight': 'Switch to light mode',
         'a11y.themeToDark': 'Switch to dark mode',
 
+        'nav.brandAria': 'Home - Esteban Flores',
         'nav.about': 'About me',
         'nav.projects': 'Projects',
         'nav.contact': 'Contact',
