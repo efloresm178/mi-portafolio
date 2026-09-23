@@ -111,11 +111,10 @@
             <!-- TARJETA 1: Sobre mí -->
             <section class="content-section content-section--row" id="sobre-mi">
                 <div class="section-header">
-                    <span class="section-badge" data-i18n="about.badge">Presentación</span>
                     <h2 data-i18n="about.title">Sobre mí</h2>
                 </div>
                 <div class="sobre-mi-texto">
-                    <p data-i18n-html="about.p1">Soy <strong>Esteban Flores</strong>, estudiante de <strong>Ingeniería en Sistemas</strong> y profesional de TI enfocado en el <strong>desarrollo de software</strong> y la infraestructura tecnológica.</p>
+                    <p data-i18n-html="about.p1">Soy <strong>Esteban Flores</strong>, estudiante de <strong>Ingeniería en Sistemas en la Universidad Fidélitas</strong> y profesional de TI enfocado en el <strong>desarrollo de software</strong> y la infraestructura tecnológica.</p>
                     <p data-i18n-html="about.p2">Mi experiencia en <strong>soporte técnico</strong>, <strong>bases de datos SQL</strong> y <strong>servidores Linux</strong> me ha dado una base sólida en <strong>infraestructura</strong> y en el diagnóstico y resolución de problemas (<em>troubleshooting</em>).</p>
                     <p data-i18n-html="about.p3">Complemento esa base con el desarrollo de aplicaciones web, buscando soluciones claras y mantenibles, y con un <strong>aprendizaje continuo</strong> de nuevas tecnologías.</p>
                 </div>
@@ -124,7 +123,6 @@
             <!-- TARJETA 2: Experiencia (Ordenada cronológicamente: Instacredit -> RackNation) -->
             <section class="content-section content-section--row" id="experiencia">
                 <div class="section-header">
-                    <span class="section-badge" data-i18n="exp.badge">Trayectoria</span>
                     <h2 data-i18n="exp.title">Experiencia</h2>
                 </div>
                 <div class="experiencia-texto">
@@ -224,7 +222,7 @@
 
                 <div class="contacto-contenido">
                     <!-- Formulario de Contacto (Formspree; con JS se envía sin salir de la página) -->
-                    <form class="contacto-form" action="https://formspree.io/f/xoeqgykk" method="POST">
+                    <form class="contacto-form" id="contactoForm">
                         <div class="form-group">
                             <label for="nombre" data-i18n="contact.name">Tu nombre</label>
                             <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Ej. Esteban Flores" data-i18n-attr="placeholder:contact.namePh" required>

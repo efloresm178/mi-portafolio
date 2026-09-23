@@ -324,3 +324,52 @@ if (history.scrollRestoration) {
 window.addEventListener('load', () => {
     window.scrollTo(0, 0);
 });
+
+
+document.querySelector('.contacto-form').addEventListener('submit', async function(e) {
+    e.preventDefault(); // Evita que la página recargue
+
+    const form = e.target;
+    const statusP = document.getElementById('form-status');
+    const submitBtn = form.querySelector('.btn-submit');
+    
+    // Capturamos los datos usando los 'name' exactos de tus inputs HTML
+    const formData = {
+        name: form.nombre.value,
+        email: form.email.value,
+        subject: form.asunto.value,
+        message: form.mensaje.value
+    };
+
+    // Mostrar estado de carga en el párrafo de estado (<p id="form-status">)
+    submitBtn.disabled = true;
+    statusP.hidden = false;
+    statusP.textContent = "Enviando mensaje...";
+    statusP.className = "form-status loading";
+
+    try {
+        // Petición POST directa a tu Cloudflare Worker
+        const response = await fetch('https://contacto-portafolio.estebanfm20-06-15.workers.dev/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            statusP.textContent = "¡Mensaje enviado con éxito!";
+            statusP.className = "form-status success";
+            form.reset(); // Limpia los campos del formulario
+        } else {
+            throw new Error(result.error || "Error al enviar el mensaje");
+        }
+    } catch (error) {
+        statusP.textContent = "Hubo un error al enviar. Inténtalo de nuevo.";
+        statusP.className = "form-status error";
+    } finally {
+        submitBtn.disabled = false; // Vuelve a habilitar el botón
+    }
+});
