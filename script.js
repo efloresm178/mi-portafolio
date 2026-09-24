@@ -14,7 +14,6 @@ const translations = {
         'a11y.themeToLight': 'Activar modo claro',
         'a11y.themeToDark': 'Activar modo oscuro',
 
-        'nav.brandAria': 'Inicio - Esteban Flores',
         'nav.about': 'Sobre mí',
         'nav.projects': 'Proyectos',
         'nav.contact': 'Contacto',
@@ -23,8 +22,6 @@ const translations = {
         'hero.status': 'Disponible para proyectos',
         'hero.role': 'Desarrollador de Software<span class="role-sep" aria-hidden="true">|</span>Infraestructura&nbsp;TI<span class="role-sep" aria-hidden="true">|</span>Linux<span class="role-sep" aria-hidden="true">|</span>SQL',
         'hero.bio': 'Estudiante de Ingeniería en Sistemas con experiencia práctica en soporte técnico, infraestructura, servidores Linux, bases de datos SQL y desarrollo de aplicaciones web.',
-        'hero.ctaProjects': 'Ver Proyectos',
-        'hero.ctaContact': 'Contactar',
         'hero.languagesAria': 'Idiomas',
         'hero.flagEs': 'Bandera de Costa Rica',
         'hero.flagEn': 'Bandera de Estados Unidos',
@@ -33,13 +30,11 @@ const translations = {
         'hero.langEn': 'Inglés',
         'hero.levelEn': 'B2+ • Professional',
 
-        'about.badge': 'Presentación',
         'about.title': 'Sobre mí',
         'about.p1': 'Soy <strong>Esteban Flores</strong>, estudiante de <strong>Ingeniería en Sistemas</strong> y profesional de TI enfocado en el <strong>desarrollo de software</strong> y la infraestructura tecnológica.',
         'about.p2': 'Mi experiencia en <strong>soporte técnico</strong>, <strong>bases de datos SQL</strong> y <strong>servidores Linux</strong> me ha dado una base sólida en <strong>infraestructura</strong> y en el diagnóstico y resolución de problemas (<em>troubleshooting</em>).',
         'about.p3': 'Complemento esa base con el desarrollo de aplicaciones web, buscando soluciones claras y mantenibles, y con un <strong>aprendizaje continuo</strong> de nuevas tecnologías.',
 
-        'exp.badge': 'Trayectoria',
         'exp.title': 'Experiencia',
         'exp.job1.role': 'Analista de Datos / Soporte',
         'exp.job1.b1': 'Análisis de datos y gestión de consultas.',
@@ -51,7 +46,7 @@ const translations = {
 
         'projects.badge': 'Portafolio',
         'projects.title': 'Proyectos Destacados',
-        'projects.demo': 'Ver demo',
+        'projects.demo': 'Ver proyecto',
         'projects.p1.alt': 'Captura de pantalla del Juego de Baseball',
         'projects.p1.title': 'Juego de Baseball',
         'projects.p1.tag': 'Diseño UI',
@@ -94,7 +89,6 @@ const translations = {
         'a11y.themeToLight': 'Switch to light mode',
         'a11y.themeToDark': 'Switch to dark mode',
 
-        'nav.brandAria': 'Home - Esteban Flores',
         'nav.about': 'About me',
         'nav.projects': 'Projects',
         'nav.contact': 'Contact',
@@ -103,8 +97,6 @@ const translations = {
         'hero.status': 'Available for projects',
         'hero.role': 'Software Developer<span class="role-sep" aria-hidden="true">|</span>IT&nbsp;Infrastructure<span class="role-sep" aria-hidden="true">|</span>Linux<span class="role-sep" aria-hidden="true">|</span>SQL',
         'hero.bio': 'Systems Engineering student with hands-on experience in technical support, infrastructure, Linux servers, SQL databases and web application development.',
-        'hero.ctaProjects': 'View Projects',
-        'hero.ctaContact': 'Get in touch',
         'hero.languagesAria': 'Languages',
         'hero.flagEs': 'Costa Rica flag',
         'hero.flagEn': 'United States flag',
@@ -113,13 +105,11 @@ const translations = {
         'hero.langEn': 'English',
         'hero.levelEn': 'B2+ • Professional',
 
-        'about.badge': 'Introduction',
         'about.title': 'About me',
         'about.p1': 'I\'m <strong>Esteban Flores</strong>, a <strong>Systems Engineering</strong> student and IT professional focused on <strong>software development</strong> and technology infrastructure.',
         'about.p2': 'My experience in <strong>technical support</strong>, <strong>SQL databases</strong> and <strong>Linux servers</strong> has given me a solid foundation in <strong>infrastructure</strong> and in diagnosing and solving problems (<em>troubleshooting</em>).',
         'about.p3': 'I build on that foundation by developing web applications, aiming for clear and maintainable solutions, and by <strong>continuously learning</strong> new technologies.',
 
-        'exp.badge': 'Career',
         'exp.title': 'Experience',
         'exp.job1.role': 'Data Analyst / Support',
         'exp.job1.b1': 'Data analysis and request management.',
@@ -131,7 +121,7 @@ const translations = {
 
         'projects.badge': 'Portfolio',
         'projects.title': 'Featured Projects',
-        'projects.demo': 'Live demo',
+        'projects.demo': 'View project',
         'projects.p1.alt': 'Screenshot of the Baseball Game',
         'projects.p1.title': 'Baseball Game',
         'projects.p1.tag': 'UI Design',
@@ -179,7 +169,6 @@ function savePref(key, value) {
 }
 
 let currentLang = readPref(LANG_KEY) === 'en' ? 'en' : 'es';
-let formStatus = null; // 'sending' | 'success' | 'error' | null
 
 function t(key) {
     return translations[currentLang][key] ?? translations.es[key] ?? '';
@@ -213,7 +202,6 @@ function applyLanguage(lang) {
     });
 
     updateThemeLabel();
-    renderFormStatus();
 }
 
 /* --- TEMA --- */
@@ -238,53 +226,55 @@ function applyTheme(theme) {
     updateThemeLabel();
 }
 
-/* --- FORMULARIO DE CONTACTO (Formspree vía fetch) --- */
-function renderFormStatus() {
-    const status = document.getElementById('form-status');
-    const btnLabel = document.querySelector('.btn-submit span');
-    if (!status || !btnLabel) return;
-
-    btnLabel.textContent = formStatus === 'sending' ? t('contact.sending') : t('contact.send');
-    status.classList.remove('is-success', 'is-error');
-
-    if (formStatus === 'success' || formStatus === 'error') {
-        status.textContent = t('contact.' + formStatus);
-        status.classList.add('is-' + formStatus);
-        status.hidden = false;
-    } else {
-        status.textContent = '';
-        status.hidden = true;
-    }
-}
-
+/* --- FORMULARIO DE CONTACTO (Cloudflare Worker + Resend) --- */
 function initContactForm() {
     const form = document.querySelector('.contacto-form');
     if (!form) return;
-    const submitBtn = form.querySelector('.btn-submit');
 
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        formStatus = 'sending';
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault(); // Evita que la página recargue
+
+        const statusP = document.getElementById('form-status');
+        const submitBtn = form.querySelector('.btn-submit');
+        
+        // Capturamos los datos usando los 'name' exactos de tus inputs HTML
+        const formData = {
+            name: form.nombre.value,
+            email: form.email.value,
+            subject: form.asunto.value,
+            message: form.mensaje.value
+        };
+
+        // Mostrar estado de carga en el párrafo de estado (<p id="form-status">)
         submitBtn.disabled = true;
-        submitBtn.setAttribute('aria-busy', 'true');
-        renderFormStatus();
+        statusP.hidden = false;
+        statusP.textContent = "Enviando mensaje...";
+        statusP.className = "form-status loading";
 
         try {
-            const response = await fetch(form.action, {
+            // Petición POST directa a tu Cloudflare Worker
+            const response = await fetch('https://contacto-portafolio.estebanfm20-06-15.workers.dev/', {
                 method: 'POST',
-                body: new FormData(form),
-                headers: { Accept: 'application/json' }
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
             });
-            if (!response.ok) throw new Error('HTTP ' + response.status);
-            form.reset();
-            formStatus = 'success';
-            if (typeof gtag === 'function') gtag('event', 'formulario_enviado');
+
+            const result = await response.json();
+
+            if (response.ok) {
+                statusP.textContent = "¡Mensaje enviado con éxito!";
+                statusP.className = "form-status success";
+                form.reset(); // Limpia los campos del formulario
+            } else {
+                throw new Error(result.error || "Error al enviar el mensaje");
+            }
         } catch (error) {
-            formStatus = 'error';
+            statusP.textContent = "Hubo un error al enviar. Inténtalo de nuevo.";
+            statusP.className = "form-status error";
         } finally {
-            submitBtn.disabled = false;
-            submitBtn.removeAttribute('aria-busy');
-            renderFormStatus();
+            submitBtn.disabled = false; // Vuelve a habilitar el botón
         }
     });
 }
@@ -323,53 +313,4 @@ if (history.scrollRestoration) {
 
 window.addEventListener('load', () => {
     window.scrollTo(0, 0);
-});
-
-
-document.querySelector('.contacto-form').addEventListener('submit', async function(e) {
-    e.preventDefault(); // Evita que la página recargue
-
-    const form = e.target;
-    const statusP = document.getElementById('form-status');
-    const submitBtn = form.querySelector('.btn-submit');
-    
-    // Capturamos los datos usando los 'name' exactos de tus inputs HTML
-    const formData = {
-        name: form.nombre.value,
-        email: form.email.value,
-        subject: form.asunto.value,
-        message: form.mensaje.value
-    };
-
-    // Mostrar estado de carga en el párrafo de estado (<p id="form-status">)
-    submitBtn.disabled = true;
-    statusP.hidden = false;
-    statusP.textContent = "Enviando mensaje...";
-    statusP.className = "form-status loading";
-
-    try {
-        // Petición POST directa a tu Cloudflare Worker
-        const response = await fetch('https://contacto-portafolio.estebanfm20-06-15.workers.dev/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        });
-
-        const result = await response.json();
-
-        if (response.ok) {
-            statusP.textContent = "¡Mensaje enviado con éxito!";
-            statusP.className = "form-status success";
-            form.reset(); // Limpia los campos del formulario
-        } else {
-            throw new Error(result.error || "Error al enviar el mensaje");
-        }
-    } catch (error) {
-        statusP.textContent = "Hubo un error al enviar. Inténtalo de nuevo.";
-        statusP.className = "form-status error";
-    } finally {
-        submitBtn.disabled = false; // Vuelve a habilitar el botón
-    }
 });

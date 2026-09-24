@@ -339,51 +339,6 @@ h1, h2, h3 {
 }
 
 
-/* Botones Principales */
-.btn-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--accent-gradient);
-    color: #0b0f19;
-    font-weight: 600;
-    font-size: 0.92rem;
-    padding: 10px 24px;
-    border-radius: var(--radius-full);
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
-    transition: var(--transition-fast);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.45);
-}
-
-.btn-outline {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--overlay-soft);
-    color: var(--text-primary);
-    font-weight: 500;
-    font-size: 0.92rem;
-    padding: 10px 24px;
-    border-radius: var(--radius-full);
-    text-decoration: none;
-    border: 1px solid var(--border-subtle);
-    backdrop-filter: blur(8px);
-    transition: var(--transition-fast);
-}
-
-.btn-outline:hover {
-    background: var(--overlay-strong);
-    border-color: var(--overlay-border);
-    transform: translateY(-2px);
-}
-
 /* --- NAVEGACIÓN FLOTANTE MODERNA --- */
 /* Tres columnas: [vacía] [menú centrado] [controles]. Las laterales miden
    lo mismo (1fr), así los controles nunca desplazan el centro real del menú. */
@@ -880,16 +835,24 @@ main {
     border: 1px solid transparent;
 }
 
-.form-status.is-success {
+.form-status.is-success,
+.form-status.success {
     color: var(--status-color);
     background: rgba(16, 185, 129, 0.1);
     border-color: rgba(16, 185, 129, 0.3);
 }
 
-.form-status.is-error {
+.form-status.is-error,
+.form-status.error {
     color: var(--error-color);
     background: rgba(248, 113, 113, 0.1);
     border-color: rgba(248, 113, 113, 0.3);
+}
+
+.form-status.loading {
+    color: var(--accent-cyan);
+    background: rgba(56, 189, 248, 0.1);
+    border-color: rgba(56, 189, 248, 0.3);
 }
 
 /* Redes Profesionales */
